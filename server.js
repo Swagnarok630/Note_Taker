@@ -9,12 +9,12 @@ const PORT = process.env.PORT || 3001;
 
 // Express middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-// Routes
+// Routes (html for viewing pages and api for handling data retrieval and posting)
 app.use("/", htmlRoutes);
-app.use("/", apiRoutes);
+app.use("/api", apiRoutes);
 
 // Listening for port
 app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
